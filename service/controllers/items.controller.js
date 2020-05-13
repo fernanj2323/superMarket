@@ -2,7 +2,7 @@ const Item  = require ('../models/items')
 const itemCTRL = {};
 
 itemCTRL.getItems = async (req, res, next) => { 
- console.log('getITems');
+ //console.log('getITems');
  await Item.find()
     .exec((err, data) =>{
         if (err){
@@ -13,20 +13,22 @@ itemCTRL.getItems = async (req, res, next) => {
     })
 }
 
-itemCTRL.getItemsByCategory = async (req, res, next) =>{
-    let category = req.body.category;
-    await Item.find({category: category})
-    .exec((err, data) => {
-        if (err){
-            res.satus(404).send({status: '404 error'})
-        }else {
-            res.status(200).send(data)
-        }
-    })
+itemCTRL.getItemById = async (req, res, next) =>{
+    let id = req.params.id;
+   await Item.findById(id)
+   .exec((err, data) =>{
+       if (err){
+           res.status(404).send({msg: "No existe el registro", status:404});
+       }else{
+           res.status(200).send(data);
+       }
+   })
 }
 
-
 itemCTRL.putItem  = async (req, res, next) =>{
+
+  console.log('put item', req.body)
+  
     let id = req.params.id; 
     await Item.findByIdAndUpdate(id, {$set: req.body}, {new: true})
     .exec((err, data) =>{

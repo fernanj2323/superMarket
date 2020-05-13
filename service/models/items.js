@@ -6,8 +6,8 @@ const schema = new Schema ({
 
     title :{ type: String},
     description :{ type: String},
-    imagePath: String,
-    categoryId :{ type: String},
+    quantity : {type:Number}, 
+    category :{ type: String},
 
 }); 
 

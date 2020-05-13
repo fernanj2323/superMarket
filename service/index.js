@@ -46,7 +46,7 @@ function middlewares(){
 function routes(){
 
    app.use('/api/items', require('./routes/items.routes'));
-   app.use('/api/category', require('./routes/category.routes'));
+
    
 
    
