@@ -1,7 +1,7 @@
 ------------------------------------------
 CRUD Aplicacion NodeJS para supermercado
 ------------------------------------------
-En ésta aplicacion podremos gestionar productos de un supermercado a través de peticiones REST API 
+En ésta aplicacion gestionamos productos de un supermercado a través de peticiones REST API 
 
 Aspectos tecnicos: 
 
@@ -29,7 +29,7 @@ Comando de ejecucion de servicio a traves de PM2: cd server && PM2 start index.j
 
 Formato de respuesta: JSON
 
-Repositorio: Github
+Repositorio: Github | https://github.com/fernanj2323/superMarket
 
 Fecha de inicio: 12/05/2020 
 
